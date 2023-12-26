@@ -20,7 +20,7 @@ if [ ! -d "$FILE" ]; then
 fi
 cd wartnode
 
-wget -O wart-node-linux https://github.com/warthog-network/Warthog/releases/download/master-0.1.2-6d298a3/wart-node-linux
+wget -O wart-node-linux https://github.com/warthog-network/Warthog/releases/download/master-0.1.8-ff6b90d/wart-node-linux
 echo -e "#!/usr/bin/bash\n/home/user/wartnode/wart-node-linux --rpc=0.0.0.0:3000 --chain-db=/home/user/.warthog/chain.db3 --peers-db=/home/user/.warthog/peers.db3 >/home/user/wartnode/wartnode.log" >/home/user/wartnode/wartnode.sh
 chmod +x *
 

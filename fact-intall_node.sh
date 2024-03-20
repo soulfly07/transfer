@@ -25,8 +25,8 @@ tar -xvf factorn-f597273f3bdc-x86_64-linux-gnu.tar.gz
 mv factorn-f597273f3bdc factorn-run
 mkdir ~/.factorn && touch ~/.factorn/factorn.conf
 cat /dev/null > ~/.factorn/factorn.conf
-echo "rpcuser=soulfly07" >> ~/.factorn/factorn.conf
-echo "rpcpassword=soulfly07" >> ~/.factorn/factorn.conf
+echo "rpcuser=USERNAME" >> ~/.factorn/factorn.conf
+echo "rpcpassword=USERPASSSS" >> ~/.factorn/factorn.conf
 echo "rpcbind=0.0.0.0" >> ~/.factorn/factorn.conf
 echo "rpcallowip=0.0.0.0/0" >> ~/.factorn/factorn.conf
 

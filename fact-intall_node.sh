@@ -30,7 +30,7 @@ echo "rpcpassword=soulfly07" >> ~/.factorn/factorn.conf
 echo "rpcbind=0.0.0.0" >> ~/.factorn/factorn.conf
 echo "rpcallowip=0.0.0.0/0" >> ~/.factorn/factorn.conf
 
-echo -e "#!/bin/bash\n$path/factorn-run/bin/factornd >$path/fact.log" >$path/$serviceScript
+echo -e "#!/bin/bash\n$path/factorn-run/bin/factornd -datadir=~/.factorn >$path/fact.log" >$path/$serviceScript
 chmod u+x $path/$serviceScript
 
 echo -e "[Unit]\nAfter=network-online.target\n[Service]\n#StandardOutput=append:$path/factnode.log\n#StandardError=append:$path/factnode.error.log\nExecStart=/bin/bash $path/$serviceScript\nRestart=on-failure\nRestartSec=1s\n[Install]\nWantedBy=default.target" > $servicePath/$nameService 

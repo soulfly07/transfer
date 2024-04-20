@@ -21,7 +21,7 @@ mv x86_64-unknown-linux-gnu/* .
 rm -r x86_64-unknown-linux-gnu
 rm xelis-blockchain.tar.gz
 
-echo -e "#!/usr/bin/bash\n\n$path/xelis_daemon --network testnet --allow-boost-sync | tee $path/$FILE.out.log" >$path/$serviceScript
+echo -e "#!/usr/bin/bash\n\n$path/xelis_daemon --allow-boost-sync | tee $path/$FILE.out.log" >$path/$serviceScript
 chmod u+x $serviceScript
 
 

@@ -15,7 +15,7 @@ if [ ! -d "$FILE" ]; then
 fi
 cd $FILE
 
-wget -O xelis-blockchain.tar.gz https://github.com/xelis-project/xelis-blockchain/releases/download/v1.9.2/x86_64-unknown-linux-gnu.tar.gz
+wget -O xelis-blockchain.tar.gz https://github.com/xelis-project/xelis-blockchain/releases/download/v1.9.3/x86_64-unknown-linux-gnu.tar.gz
 tar -xvzf xelis-blockchain.tar.gz
 mv x86_64-unknown-linux-gnu/* .
 rm -r x86_64-unknown-linux-gnu

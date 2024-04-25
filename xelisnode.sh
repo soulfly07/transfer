@@ -9,7 +9,7 @@ servicePath=/etc/systemd/system
 nameService=$FILE.service
 
 #stop service if it is running
-systemctl is-active --quiet $FILE && systemctl stop --no-block $FILE
+#systemctl is-active --quiet $FILE && systemctl stop --no-block $FILE
 
 cd $currentPath
 

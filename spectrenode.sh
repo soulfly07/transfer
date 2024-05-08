@@ -21,7 +21,7 @@ cd $FILE
 echo "create folder $currentPath/$FILE"
 sleep 2
 
-wget https://spectre-network.org/downloads/spectred-v0.3.14-linux-x86_64.zip
+wget -O spectred-v0.3.14-linux-x86_64.zip https://spectre-network.org/downloads/spectred-v0.3.14-linux-x86_64.zip
 apt install zip -y 
 unzip -o spectred-v0.3.14-linux-x86_64.zip
 mv bin/* .
@@ -30,7 +30,7 @@ rm spectred-v0.3.14-linux-x86_64.zip
 
 mkdir -p $currentPath/$datapath/spectre-mainnet/
 cd $currentPath/$datapath/spectre-mainnet/
-wget https://spectre-network.org/downloads/datadir2.zip
+wget -O datadir2.zip https://spectre-network.org/downloads/datadir2.zip
 unzip -o datadir2.zip
 rm datadir2.zip
 

@@ -21,7 +21,7 @@ cd $FILE
 echo "create folder $currentPath/$FILE"
 sleep 2
 
-wget https://github.com/spectre-project/rusty-spectre/releases/download/v0.3.14/rusty-spectre-v0.3.14-linux-gnu-amd64.zip
+wget -O rusty-spectre-v0.3.14-linux-gnu-amd64.zip https://github.com/spectre-project/rusty-spectre/releases/download/v0.3.14/rusty-spectre-v0.3.14-linux-gnu-amd64.zip
 apt install zip -y 
 unzip -o rusty-spectre-v0.3.14-linux-gnu-amd64.zip
 mv bin/* .

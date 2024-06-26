@@ -21,22 +21,23 @@ cd $FILE
 echo "create folder $currentPath/$FILE"
 sleep 2
 
-wget -O spectred-v0.3.14-linux-x86_64.zip https://spectre-network.org/downloads/spectred-v0.3.14-linux-x86_64.zip
+wget https://github.com/spectre-project/rusty-spectre/releases/download/v0.3.14/rusty-spectre-v0.3.14-linux-gnu-amd64.zip
 apt install zip -y 
-unzip -o spectred-v0.3.14-linux-x86_64.zip
+unzip -o rusty-spectre-v0.3.14-linux-gnu-amd64.zip
 mv bin/* .
 rm -r bin
-rm spectred-v0.3.14-linux-x86_64.zip
+rm rusty-spectre-v0.3.14-linux-gnu-amd64.zip
 
-mkdir -p $currentPath/$datapath/spectre-mainnet/
-cd $currentPath/$datapath/spectre-mainnet/
-wget -O datadir2.zip https://spectre-network.org/downloads/datadir2.zip
-unzip -o datadir2.zip
-rm datadir2.zip
+#datadir2
+#mkdir -p $currentPath/$datapath/spectre-mainnet/
+#cd $currentPath/$datapath/spectre-mainnet/
+#wget https://spectre-network.org/downloads/datadir2.zip
+#unzip -o datadir2.zip
+#rm datadir2.zip
 
 cd $path
 
-echo -e "#!/usr/bin/bash\n\n$path/spectred --utxoindex | tee $path/$FILE.out.log" >$path/$serviceScript
+echo -e "#!/usr/bin/bash\n\n$path/spectred --utxoindex --rpclisten=0.0.0.0:18110 | tee $path/$FILE.out.log" >$path/$serviceScript
 chmod u+x $serviceScript
 
 echo -e "[Unit]\nAfter=network-online.target\n[Service]\nExecStart=/bin/bash $path/$serviceScript\nRestart=on-failure\nRestartSec=1s\n[Install]\nWantedBy=default.target" > $servicePath/$nameService
